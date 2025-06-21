@@ -1,7 +1,8 @@
+import MadeiraHomeLogo from "@/components/MadeiraHomeLogo";
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
-import Header from "@/components/Header";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -29,8 +30,10 @@ export default function RootLayout({
         className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
       >
         <div className="flex flex-col items-center ">
-          <Header />
-          <div className="items-center justify-items-center min-h-screen font-[family-name:var(--font-roboto-sans)] w-full max-w-[1400px] mx-auto ">
+          <Link href="/">
+            <MadeiraHomeLogo />
+          </Link>
+          <div className="items-center min-h-screen font-[family-name:var(--font-roboto-sans)] w-full max-w-[1400px] mx-auto ">
             <main>{children}</main>
           </div>
         </div>
